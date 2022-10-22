@@ -1,6 +1,5 @@
 import { NavLink as _NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-import Logo from '../components/ui/Logo';
 
 const Wrapper = styled.nav`
   display: flex;
@@ -26,7 +25,6 @@ const menuItems = [
 const Menu = () => {
   return (
     <Wrapper>
-      <Logo />
       {menuItems.map(({ path, label }) => (
         <NavLink key={path} to={path} end>
           {label}
