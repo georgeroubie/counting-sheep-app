@@ -1,6 +1,6 @@
 {
-  "name": "react-boilerplate",
-  "version": "5.2.1",
+  "name": "counting-sheep-app",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
