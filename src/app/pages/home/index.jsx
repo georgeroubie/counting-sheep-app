@@ -1,7 +1,5 @@
-import PageWrapper from '../../components/layout/PageWrapper';
-
 const Home = () => {
-  return <PageWrapper></PageWrapper>;
+  return null;
 };
 
 export default Home;
