@@ -11,7 +11,7 @@ const animations = css`
     }
   }
 
-  @keyframes falling {
+  @keyframes shooting-star {
     0% {
       opacity: 1;
     }
@@ -20,6 +20,21 @@ const animations = css`
       transform: rotate(-40deg) translate3d(calc(-2 * 100vw), 0, 0);
       opacity: 0.5;
       width: 0;
+    }
+  }
+
+  @keyframes delay-animation {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0;
+    }
+    50.01% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
     }
   }
 
