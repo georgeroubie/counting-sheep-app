@@ -1,5 +1,7 @@
+import Sheep from '../../components/sheep';
+
 const Home = () => {
-  return null;
+  return <Sheep />;
 };
 
 export default Home;
