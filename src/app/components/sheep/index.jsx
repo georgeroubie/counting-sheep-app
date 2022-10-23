@@ -5,7 +5,8 @@ import SheepFace from './face';
 import SheepLegs from './legs';
 
 const Wrapper = styled.div`
-  position: relative;
+  position: absolute;
+  bottom: 60px;
   width: 250px;
   height: 180px;
   ${setAnimation('sheep-walking cubic-bezier(0, 0.39, 1, 1) 10s infinite')}
