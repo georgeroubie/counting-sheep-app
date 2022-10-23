@@ -60,6 +60,45 @@ const animations = css`
       transform: scale(100%);
     }
   }
+
+  @keyframes sheep-walking {
+    0% {
+      transform: translateX(calc(100vw + 300px));
+    }
+    100% {
+      transform: translateX(calc(-100vw - 300px));
+    }
+  }
+
+  @keyframes sheep-moving-eyes {
+    0% {
+      transform: translateX(5px);
+    }
+    50% {
+      transform: translateX(0px);
+    }
+    100% {
+      transform: translateX(5px);
+    }
+  }
+
+  @keyframes sheep-walk-leg-back {
+    0% {
+      transform: rotate(-10deg);
+    }
+    100% {
+      transform: rotate(10deg) translateX(-20px);
+    }
+  }
+
+  @keyframes sheep-walk-leg-front {
+    0% {
+      transform: rotate(10deg);
+    }
+    100% {
+      transform: rotate(-10deg) translateX(20px);
+    }
+  }
 `;
 
 export { animations };
