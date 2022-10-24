@@ -31,6 +31,25 @@ const baseTheme = {
     black: 900,
     extraBlack: 950,
   },
+  breakpoints: {
+    sm: 'min-width: 576px',
+    md: 'min-width: 768px',
+    lg: 'min-width: 992px',
+    xl: 'min-width: 1200px',
+    xxl: 'min-width: 1400px',
+  },
+  colors: {
+    backgroundPrimary: '#212121',
+    backgroundSecondary: '#171717',
+    borderPrimary: '#000000',
+    textPrimary: '#dfdfdf',
+    successBackgroundPrimary: '#00bc8b',
+    warningBackgroundPrimary: '#ffc200',
+    warningTextPrimary: '#000000',
+    dangerBackgroundPrimary: '#ff606A',
+    dangerTextPrimary: '#dfdfdf',
+    dangerBackgroundSecondary: '#fa747c',
+  },
 };
 
 export default baseTheme;
