@@ -5,7 +5,6 @@ import RoutingLoader from './Loader';
 
 // Lazy load pages
 const About = lazy(() => import('../pages/about'));
-const Settings = lazy(() => import('../pages/settings'));
 const NotFound = lazy(() => import('../pages/not-found'));
 
 const Routing = () => {
@@ -17,14 +16,6 @@ const Routing = () => {
         element={
           <RoutingLoader>
             <About />
-          </RoutingLoader>
-        }
-      />
-      <Route
-        path="/settings"
-        element={
-          <RoutingLoader>
-            <Settings />
           </RoutingLoader>
         }
       />
