@@ -21,11 +21,7 @@ const NavLink = styled(_NavLink)`
   }
 `;
 
-const menuItems = [
-  { path: '/', label: 'Home' },
-  { path: '/about', label: 'About' },
-  { path: '/settings', label: 'Settings' },
-];
+const menuItems = [];
 
 const Menu = () => {
   return (
