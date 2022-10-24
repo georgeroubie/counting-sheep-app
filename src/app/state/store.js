@@ -5,7 +5,7 @@ import { appReducer } from './reducer';
 
 function useAppState() {
   const [state, dispatch] = useReducer(appReducer, {
-    userName: 'friend',
+    userName: 'friends',
     theme: getCurrentTheme(),
   });
 
