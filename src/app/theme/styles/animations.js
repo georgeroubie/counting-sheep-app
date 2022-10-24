@@ -63,10 +63,10 @@ const animations = css`
 
   @keyframes sheep-walking {
     0% {
-      transform: translateX(calc(100vw + 300px));
+      transform: translateX(calc(100vw + 150px));
     }
     100% {
-      transform: translateX(calc(-100vw - 300px));
+      transform: translateX(-300px);
     }
   }
 
