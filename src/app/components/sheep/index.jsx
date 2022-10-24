@@ -4,12 +4,36 @@ import SheepBody from './body';
 import SheepFace from './face';
 import SheepLegs from './legs';
 
+function createSheepWalkingAnimation(time) {
+  return setAnimation(`sheep-walking linear ${time}s infinite`);
+}
+
 const Wrapper = styled.div`
   position: absolute;
   bottom: 60px;
   width: 250px;
   height: 180px;
-  ${setAnimation('sheep-walking cubic-bezier(0, 0.39, 1, 1) 10s infinite')}
+  ${createSheepWalkingAnimation(13)}
+
+  @media(${({ theme: { breakpoints } }) => breakpoints.sm}) {
+    ${createSheepWalkingAnimation(16)}
+  }
+
+  @media (${({ theme: { breakpoints } }) => breakpoints.md}) {
+    ${createSheepWalkingAnimation(19)}
+  }
+
+  @media (${({ theme: { breakpoints } }) => breakpoints.lg}) {
+    ${createSheepWalkingAnimation(22)}
+  }
+
+  @media (${({ theme: { breakpoints } }) => breakpoints.xl}) {
+    ${createSheepWalkingAnimation(25)}
+  }
+
+  @media (${({ theme: { breakpoints } }) => breakpoints.xxl}) {
+    ${createSheepWalkingAnimation(28)}
+  }
 `;
 
 const Sheep = () => {
