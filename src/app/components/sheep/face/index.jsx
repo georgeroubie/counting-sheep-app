@@ -45,6 +45,7 @@ const Eye = styled.div`
     content: '';
     display: inline-block;
     background: white;
+    margin-bottom: 3px;
     width: 5px;
     height: 5px;
     border-radius: 50%;
