@@ -1,18 +1,38 @@
+import styled from 'styled-components';
 import PageWrapper from '../../components/layout/PageWrapper';
 import Description from '../../components/typography/Description';
+import Subtitle from '../../components/typography/Subtitle';
 import Title from '../../components/typography/Title';
+
+const Hyperlink = styled.a`
+  text-decoration: underline;
+`;
 
 const About = () => {
   return (
     <PageWrapper>
-      <Title>About us</Title>
+      <Title>About</Title>
+      <Subtitle>Info</Subtitle>
       <Description>
-        It is a long established fact that a reader will be distracted by the readable content of a page when looking at
-        its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as
-        opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing
-        packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum'
-        will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by
-        accident, sometimes on purpose (injected humour and the like).
+        A counting sheep app that will help you fall asleep. The application is created by George Roubie (me). You can
+        find the code of this web application on my GitHub page. If you like it give the repository a star on&nbsp;
+        <Hyperlink href="https://github.com/georgeroubie/counting-sheep-app" target="_blank" rel="noreferrer">
+          GitHub
+        </Hyperlink>
+        &nbsp;and follow me on&nbsp;
+        <Hyperlink href="https://www.linkedin.com/in/georgeroubie" target="_blank" rel="noreferrer">
+          LinkedIn
+        </Hyperlink>
+        &nbsp;and&nbsp;
+        <Hyperlink href="https://george-roubie.medium.com" target="_blank" rel="noreferrer">
+          Medium
+        </Hyperlink>
+        . Thank you for using it, have fun!
+      </Description>
+      <Subtitle>Data and Privacy</Subtitle>
+      <Description>
+        Counting sheep web application does not use any kind of cookies or tracking. All the data are saved on your
+        device.
       </Description>
     </PageWrapper>
   );
