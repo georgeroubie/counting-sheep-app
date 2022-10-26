@@ -6,6 +6,11 @@ const base = css`
   :after {
     box-sizing: border-box;
   }
+
+  html,
+  body {
+    background: ${({ theme: { colors } }) => colors.backgroundPrimary};
+  }
 `;
 
 export { base };
