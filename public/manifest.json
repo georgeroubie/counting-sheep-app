@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
-  "short_name": "Counting sheep app",
-  "name": "Counting sheep app",
+  "short_name": "Counting sheep",
+  "name": "Counting sheep",
   "icons": [
     {
       "src": "favicon.ico",
@@ -21,6 +21,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#020024",
+  "background_color": "#020024"
 }
