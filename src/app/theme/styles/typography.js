@@ -11,6 +11,10 @@ const typography = css`
     letter-spacing: 0.05rem;
     color: ${({ theme: { colors } }) => colors.textPrimary};
   }
+
+  a {
+    color: ${({ theme: { colors } }) => colors.textPrimary};
+  }
 `;
 
 export { typography };
