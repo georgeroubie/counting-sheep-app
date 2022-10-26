@@ -2,10 +2,9 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  text-align: center;
-  max-width: 800px;
   margin: ${({ theme: { spacing } }) => spacing.xlarge} auto;
-  padding: 0 ${({ theme: { spacing } }) => spacing.large};
+  padding: ${({ theme: { spacing, sizes } }) => `0 ${spacing.large} ${sizes.grassHeight} ${spacing.large}`};
+  overflow-y: auto;
 `;
 
 const PageWrapper = ({ children }) => {
