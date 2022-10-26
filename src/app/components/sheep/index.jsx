@@ -10,7 +10,7 @@ function createSheepWalkingAnimation(time) {
 
 const Wrapper = styled.div`
   position: absolute;
-  bottom: 60px;
+  bottom: ${({ theme: { sizes } }) => sizes.grassHeight};
   width: 250px;
   height: 180px;
   ${createSheepWalkingAnimation(13)}
