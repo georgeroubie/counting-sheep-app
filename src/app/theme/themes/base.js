@@ -3,7 +3,7 @@ const baseTheme = {
     small: '0.85rem',
     normal: '1rem',
     large: '1.5rem',
-    xlarge: '2rem',
+    xlarge: '3rem',
   },
   fontSize: {
     xsmall: '0.7rem',
@@ -38,17 +38,12 @@ const baseTheme = {
     xl: 'min-width: 1200px',
     xxl: 'min-width: 1400px',
   },
+  sizes: {
+    grassHeight: '50px',
+  },
   colors: {
-    backgroundPrimary: '#212121',
-    backgroundSecondary: '#171717',
-    borderPrimary: '#000000',
-    textPrimary: '#dfdfdf',
-    successBackgroundPrimary: '#00bc8b',
-    warningBackgroundPrimary: '#ffc200',
-    warningTextPrimary: '#000000',
-    dangerBackgroundPrimary: '#ff606A',
-    dangerTextPrimary: '#dfdfdf',
-    dangerBackgroundSecondary: '#fa747c',
+    backgroundPrimary: '#020024',
+    textPrimary: '#fff',
   },
 };
 
