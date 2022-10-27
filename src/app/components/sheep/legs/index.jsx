@@ -15,7 +15,8 @@ const Leg = styled.div`
   width: 14px;
   height: 40px;
   background: black;
-  border-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   transform-origin: top left;
   animation-duration: 1s;
   animation-iteration-count: infinite;
