@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import PageWrapper from '../../components/layout/PageWrapper';
 import Description from '../../components/typography/Description';
@@ -9,9 +10,15 @@ const Hyperlink = styled.a`
 `;
 
 const About = () => {
+  const navigate = useNavigate();
+
+  function onBackHandler() {
+    navigate('/');
+  }
+
   return (
     <PageWrapper>
-      <Title>About</Title>
+      <Title onBack={onBackHandler}>About</Title>
       <Subtitle>Info</Subtitle>
       <Description>
         A counting sheep app that will help you fall asleep. The application is created by George Roubie (me). You can
