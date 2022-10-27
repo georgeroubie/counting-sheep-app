@@ -1,3 +1,5 @@
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import _AddIcon from '../../components/icons/Add';
 import _InfoIcon from '../../components/icons/Info';
@@ -15,6 +17,20 @@ const Grass = styled.nav`
   height: ${({ theme: { sizes } }) => sizes.grassHeight};
 `;
 
+const Number = styled.span`
+  cursor: default;
+  display: inline-block;
+  pointer-events: none;
+  font-size: ${({ theme: { fontSize } }) => fontSize.xlarge};
+  font-weight: ${({ theme: { fontWeight } }) => fontWeight.bold};
+  margin: ${({ theme: { spacing } }) => spacing.normal};
+`;
+
+const IconWrapper = styled.div`
+  display: inline-flex;
+  cursor: pointer;
+`;
+
 const InfoIcon = styled(_InfoIcon)`
   width: ${({ theme: { fontSize } }) => fontSize.xlarge};
 `;
@@ -28,13 +44,35 @@ const AddIcon = styled(_AddIcon)`
 `;
 
 const Home = () => {
+  const navigate = useNavigate();
+  const [numberOfSheep, setNumberOfSheep] = useState(0);
+
+  function refreshPage() {
+    window.location.reload();
+  }
+
+  function addOneSheep() {
+    setNumberOfSheep((prevNumberOfSheep) => prevNumberOfSheep + 1);
+  }
+
+  function goToAboutPage() {
+    navigate('/about');
+  }
+
   return (
     <>
+      <Number>{numberOfSheep}</Number>
       <Sheep />
       <Grass>
-        <AddIcon />
-        <ResetIcon />
-        <InfoIcon />
+        <IconWrapper onClick={addOneSheep}>
+          <AddIcon />
+        </IconWrapper>
+        <IconWrapper onClick={refreshPage}>
+          <ResetIcon />
+        </IconWrapper>
+        <IconWrapper onClick={goToAboutPage}>
+          <InfoIcon />
+        </IconWrapper>
       </Grass>
     </>
   );
