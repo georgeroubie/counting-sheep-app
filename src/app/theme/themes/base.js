@@ -39,7 +39,7 @@ const baseTheme = {
     xxl: 'min-width: 1400px',
   },
   sizes: {
-    grassHeight: '50px',
+    grassHeight: '4rem',
   },
   colors: {
     backgroundPrimary: '#020024',
