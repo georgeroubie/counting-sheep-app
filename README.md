@@ -1,6 +1,6 @@
 # General information
 
-A counting sheep app that will help you fall asleep.
+A [counting sheep app](https://sheep-counting.com) that will help you fall asleep.
 
 # Development
 
