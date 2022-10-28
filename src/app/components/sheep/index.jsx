@@ -1,3 +1,4 @@
+import { forwardRef } from 'react';
 import styled from 'styled-components';
 import { setAnimation } from '../../theme/styles/helpers';
 import SheepBody from './body';
@@ -13,37 +14,39 @@ const Wrapper = styled.div`
   bottom: ${({ theme: { sizes } }) => sizes.grassHeight};
   width: 250px;
   height: 180px;
-  ${createSheepWalkingAnimation(13)}
+  ${createSheepWalkingAnimation(7)}
 
   @media(${({ theme: { breakpoints } }) => breakpoints.sm}) {
-    ${createSheepWalkingAnimation(16)}
+    ${createSheepWalkingAnimation(8)}
   }
 
   @media (${({ theme: { breakpoints } }) => breakpoints.md}) {
-    ${createSheepWalkingAnimation(19)}
+    ${createSheepWalkingAnimation(9)}
   }
 
   @media (${({ theme: { breakpoints } }) => breakpoints.lg}) {
-    ${createSheepWalkingAnimation(22)}
+    ${createSheepWalkingAnimation(10)}
   }
 
   @media (${({ theme: { breakpoints } }) => breakpoints.xl}) {
-    ${createSheepWalkingAnimation(25)}
+    ${createSheepWalkingAnimation(11)}
   }
 
   @media (${({ theme: { breakpoints } }) => breakpoints.xxl}) {
-    ${createSheepWalkingAnimation(28)}
+    ${createSheepWalkingAnimation(12)}
   }
 `;
 
-const Sheep = () => {
+const Sheep = forwardRef((props, ref) => {
   return (
-    <Wrapper>
+    <Wrapper ref={ref}>
       <SheepFace />
       <SheepBody />
       <SheepLegs />
     </Wrapper>
   );
-};
+});
+
+Sheep.displayName = 'Sheep';
 
 export default Sheep;
