@@ -21,9 +21,9 @@ const Number = styled.span`
   cursor: default;
   display: inline-block;
   pointer-events: none;
-  font-size: ${({ theme: { fontSize } }) => fontSize.xlarge};
+  font-size: ${({ theme: { fontSize } }) => fontSize.xxlarge};
   font-weight: ${({ theme: { fontWeight } }) => fontWeight.bold};
-  margin: ${({ theme: { spacing } }) => spacing.normal};
+  margin: ${({ theme: { spacing } }) => spacing.large};
 `;
 
 const IconWrapper = styled.div`
@@ -61,7 +61,7 @@ const Home = () => {
 
   return (
     <>
-      <Number>{numberOfSheep}</Number>
+      {numberOfSheep > 0 && <Number>{numberOfSheep}</Number>}
       <Sheep />
       <Grass>
         <IconWrapper onClick={addOneSheep}>
