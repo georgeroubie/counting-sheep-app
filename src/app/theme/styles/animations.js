@@ -33,8 +33,14 @@ const animations = css`
     50.01% {
       opacity: 1;
     }
-    100% {
+    60% {
       opacity: 1;
+    }
+    70% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
     }
   }
 
