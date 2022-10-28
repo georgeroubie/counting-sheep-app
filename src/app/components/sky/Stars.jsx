@@ -56,23 +56,17 @@ const Star = styled.span`
   ${({ $shootingStarDelay }) =>
     $shootingStarDelay === 1 &&
     css`
-      ${animationShootingStar('25s')}
+      ${animationShootingStar('50s')}
     `};
 
   ${({ $shootingStarDelay }) =>
     $shootingStarDelay === 2 &&
     css`
-      ${animationShootingStar('50s')}
-    `};
-
-  ${({ $shootingStarDelay }) =>
-    $shootingStarDelay === 3 &&
-    css`
       ${animationShootingStar('100s')}
     `};
 
   ${({ $shootingStarDelay }) =>
-    $shootingStarDelay === 4 &&
+    $shootingStarDelay === 3 &&
     css`
       ${animationShootingStar('150s')}
     `};
@@ -81,6 +75,12 @@ const Star = styled.span`
     $shootingStarDelay === 4 &&
     css`
       ${animationShootingStar('200s')}
+    `};
+
+  ${({ $shootingStarDelay }) =>
+    $shootingStarDelay === 4 &&
+    css`
+      ${animationShootingStar('250s')}
     `};
 `;
 
@@ -91,15 +91,15 @@ const Stars = () => {
     const starsData = [];
     const windowHeight = window.innerHeight;
     const windowWidth = window.innerWidth;
-    const minimumStars = parseInt(windowWidth + windowHeight / 5);
-    const maximumStars = parseInt(windowWidth + windowHeight / 4);
+    const minimumStars = parseInt(windowWidth / 3 + windowHeight / 5);
+    const maximumStars = parseInt(windowWidth / 2 + windowHeight / 4);
     const totalStars = randomNumber(minimumStars, maximumStars);
     for (let i = 0; i < totalStars; i++) {
       const top = randomNumber(0, windowHeight);
       const left = randomNumber(0, windowWidth);
       const size = randomStarSize();
       const isDark = randomDarkStar();
-      const shootingStarDelay = randomShootingStarDelay();
+      const shootingStarDelay = randomShootingStarDelay(parseInt((totalStars * 95) / 100));
       const trembling = shootingStarDelay ? undefined : randomStarTrembling();
       starsData.push({
         top,
@@ -163,8 +163,8 @@ const Stars = () => {
     }
   }
 
-  function randomShootingStarDelay() {
-    const shootingStarIndicator = randomNumber(1, 500);
+  function randomShootingStarDelay(maxShootingStars) {
+    const shootingStarIndicator = randomNumber(1, maxShootingStars);
     if (shootingStarIndicator < 6) {
       return shootingStarIndicator;
     }
