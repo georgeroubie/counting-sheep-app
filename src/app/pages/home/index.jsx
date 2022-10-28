@@ -1,12 +1,13 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import _AddIcon from '../../components/icons/Add';
 import _InfoIcon from '../../components/icons/Info';
 import _ResetIcon from '../../components/icons/Reset';
 import Sheep from '../../components/sheep';
+import useOnViewport from '../../hooks/useOnViewport';
 
-const Grass = styled.nav`
+const Grass = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -45,14 +46,26 @@ const AddIcon = styled(_AddIcon)`
 
 const Home = () => {
   const navigate = useNavigate();
+  const sheepRef = useRef(null);
+  const sheepEntry = useOnViewport(sheepRef, {});
+  const [isAddSheepEnabled, setIsAddSheepEnabled] = useState(false);
   const [numberOfSheep, setNumberOfSheep] = useState(0);
+
+  useEffect(() => {
+    if (sheepEntry?.isIntersecting) {
+      setIsAddSheepEnabled(true);
+    }
+  }, [sheepEntry]);
 
   function refreshPage() {
     window.location.reload();
   }
 
   function addOneSheep() {
-    setNumberOfSheep((prevNumberOfSheep) => prevNumberOfSheep + 1);
+    if (isAddSheepEnabled) {
+      setNumberOfSheep((prevNumberOfSheep) => prevNumberOfSheep + 1);
+      setIsAddSheepEnabled(false);
+    }
   }
 
   function goToAboutPage() {
@@ -62,7 +75,7 @@ const Home = () => {
   return (
     <>
       {numberOfSheep > 0 && <Number>{numberOfSheep}</Number>}
-      <Sheep />
+      <Sheep ref={sheepRef} />
       <Grass>
         <IconWrapper onClick={addOneSheep}>
           <AddIcon />
