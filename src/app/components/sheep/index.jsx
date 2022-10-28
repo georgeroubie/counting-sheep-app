@@ -14,6 +14,7 @@ const Wrapper = styled.div`
   bottom: ${({ theme: { sizes } }) => sizes.grassHeight};
   width: 250px;
   height: 180px;
+  z-index: 1;
   ${createSheepWalkingAnimation(7)}
 
   @media(${({ theme: { breakpoints } }) => breakpoints.sm}) {
