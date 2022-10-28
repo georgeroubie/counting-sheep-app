@@ -11,6 +11,7 @@ const baseTheme = {
     normal: '1rem',
     large: '1.5rem',
     xlarge: '2rem',
+    xxlarge: '3rem',
   },
   lineHeight: {
     xsmall: '1rem',
@@ -18,18 +19,12 @@ const baseTheme = {
     normal: '1.5rem',
     large: '2.3rem',
     xlarge: '3rem',
+    xxlarge: '4rem',
   },
   fontWeight: {
-    thin: 100,
-    extraLight: 200,
-    light: 300,
     normal: 400,
-    medium: 500,
     semiBold: 600,
     bold: 700,
-    extraBold: 800,
-    black: 900,
-    extraBlack: 950,
   },
   breakpoints: {
     sm: 'min-width: 576px',
