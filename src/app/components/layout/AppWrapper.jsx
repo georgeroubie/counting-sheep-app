@@ -34,9 +34,14 @@ const AppWrapper = ({ children }) => {
     }
 
     window.addEventListener('resize', changeHeightValue);
-
+    if (window.screen.orientation) {
+      window.screen.orientation.addEventListener('change', changeHeightValue);
+    }
     return () => {
       window.removeEventListener('resize', changeHeightValue);
+      if (window.screen.orientation) {
+        window.screen.orientation.removeEventListener('change', changeHeightValue);
+      }
     };
   }, []);
 
