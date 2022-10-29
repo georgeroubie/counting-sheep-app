@@ -6,6 +6,7 @@ const Wrapper = styled.div`
   width: 100%;
   height: 100%;
   overflow: hidden;
+  background: linear-gradient(180deg, rgba(2, 0, 36, 1) 0%, rgba(9, 10, 121, 0.91) 58%, rgba(0, 212, 255, 1) 100%);
 `;
 
 const Moon = styled.div`
