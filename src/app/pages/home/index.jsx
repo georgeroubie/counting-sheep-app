@@ -55,7 +55,6 @@ const Home = () => {
   const [numberOfSheep, setNumberOfSheep] = useState(0);
 
   useEffect(() => {
-    console.log(isSheepIntersecting);
     if (isSheepIntersecting) {
       setIsAddSheepEnabled(true);
     }
