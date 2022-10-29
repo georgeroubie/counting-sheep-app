@@ -1,31 +1,33 @@
 import { useEffect, useState } from 'react';
 
-function useOnViewport(elementRef, { threshold = 0, root = null, rootMargin = '0%', freezeOnceVisible = false }) {
-  const [entry, setEntry] = useState();
+function useOnViewport(
+  elRef,
+  options = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0,
+  },
+) {
+  const [isIntersecting, setIntersecting] = useState(false);
 
-  const frozen = entry?.isIntersecting && freezeOnceVisible;
-
-  const updateEntry = ([newEntry]) => {
-    setEntry(newEntry);
+  const cb = (entries) => {
+    const [entry] = entries;
+    setIntersecting(entry.isIntersecting);
   };
 
   useEffect(() => {
-    const node = elementRef?.current; // DOM Ref
-    const hasIOSupport = !!window.IntersectionObserver;
+    const observer = new IntersectionObserver(cb, options);
 
-    if (!hasIOSupport || frozen || !node) {
-      return;
+    if (elRef?.current) {
+      observer.observe(elRef.current);
     }
+    return () => {
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+      elRef?.current && observer?.unobserve(elRef.current);
+    };
+  }, [elRef, options]);
 
-    const observerParams = { threshold, root, rootMargin };
-    const observer = new IntersectionObserver(updateEntry, observerParams);
-
-    observer.observe(node);
-
-    return () => observer.disconnect();
-  }, [elementRef, threshold, root, rootMargin, frozen]);
-
-  return entry;
+  return [isIntersecting];
 }
 
 export default useOnViewport;
