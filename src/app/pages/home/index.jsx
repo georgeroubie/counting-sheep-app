@@ -1,10 +1,11 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import _AddIcon from '../../components/icons/Add';
 import _InfoIcon from '../../components/icons/Info';
 import _ResetIcon from '../../components/icons/Reset';
 import Sheep from '../../components/sheep';
+import Sky from '../../components/sky';
 import useOnViewport from '../../hooks/useOnViewport';
 
 const Grass = styled.div`
@@ -22,9 +23,11 @@ const Number = styled.span`
   cursor: default;
   display: inline-block;
   pointer-events: none;
+  position: absolute;
   font-size: ${({ theme: { fontSize } }) => fontSize.xxlarge};
   font-weight: ${({ theme: { fontWeight } }) => fontWeight.bold};
-  margin: ${({ theme: { spacing } }) => spacing.large};
+  top: ${({ theme: { spacing } }) => spacing.large};
+  left: ${({ theme: { spacing } }) => spacing.large};
 `;
 
 const IconWrapper = styled.div`
@@ -47,26 +50,27 @@ const AddIcon = styled(_AddIcon)`
 const Home = () => {
   const navigate = useNavigate();
   const sheepRef = useRef(null);
-  const sheepEntry = useOnViewport(sheepRef, {});
+  const [isSheepIntersecting] = useOnViewport(sheepRef);
   const [isAddSheepEnabled, setIsAddSheepEnabled] = useState(false);
   const [numberOfSheep, setNumberOfSheep] = useState(0);
 
   useEffect(() => {
-    if (sheepEntry?.isIntersecting) {
+    console.log(isSheepIntersecting);
+    if (isSheepIntersecting) {
       setIsAddSheepEnabled(true);
     }
-  }, [sheepEntry]);
+  }, [isSheepIntersecting]);
 
   function refreshPage() {
     window.location.reload();
   }
 
-  function addOneSheep() {
+  const addOneSheep = useCallback(() => {
     if (isAddSheepEnabled) {
       setNumberOfSheep((prevNumberOfSheep) => prevNumberOfSheep + 1);
       setIsAddSheepEnabled(false);
     }
-  }
+  }, [isAddSheepEnabled]);
 
   function goToAboutPage() {
     navigate('/about');
@@ -74,6 +78,7 @@ const Home = () => {
 
   return (
     <>
+      <Sky />
       {numberOfSheep > 0 && <Number>{numberOfSheep}</Number>}
       <Sheep ref={sheepRef} />
       <Grass>
