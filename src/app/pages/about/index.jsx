@@ -4,6 +4,7 @@ import PageWrapper from '../../components/layout/PageWrapper';
 import Description from '../../components/typography/Description';
 import Subtitle from '../../components/typography/Subtitle';
 import Title from '../../components/typography/Title';
+import Paypal from './Paypal';
 
 const Hyperlink = styled.a`
   text-decoration: underline;
@@ -20,6 +21,11 @@ const About = () => {
   return (
     <PageWrapper>
       <Title onBack={onBackHandler}>About</Title>
+      <Subtitle>Donation</Subtitle>
+      <Description>
+        Buy me a coffee or a beer:&nbsp;
+        <Paypal />
+      </Description>
       <Subtitle>Info</Subtitle>
       <Description>
         A counting sheep app that will help you fall asleep. You can count them with your mind, which is very effective,
