@@ -9,6 +9,8 @@ const base = css`
 
   html,
   body {
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
     background: ${({ theme: { colors } }) => colors.backgroundPrimary};
   }
 `;
