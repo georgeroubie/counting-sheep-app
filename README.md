@@ -1,7 +1,7 @@
 # General information
 
 A [counting sheep app](https://sheep-counting.com) that will help you fall asleep.
-You can count them with your mind, which is very effective, or you can use the count button.
+You can count them with your mind, which is very effective, or you can use the count button. 
 
 # Development
 
