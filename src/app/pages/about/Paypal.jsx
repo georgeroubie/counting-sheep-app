@@ -11,7 +11,7 @@ const Image = styled.img``;
 const Paypal = () => {
   return (
     <Wrapper action="https://www.paypal.com/donate" method="post" target="_top">
-      <Input type="hidden" name="hosted_button_id" value="TWJ6WWRSKM3XC" />
+      <Input type="hidden" name="hosted_button_id" value="9CMJ4NGKYQLQQ" />
       <Input
         type="image"
         src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif"
