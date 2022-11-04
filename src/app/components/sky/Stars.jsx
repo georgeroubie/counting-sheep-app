@@ -122,7 +122,7 @@ const Stars = () => {
     let timeout = null;
     function resizeListener() {
       clearTimeout(timeout);
-      timeout = setTimeout(() => generateStars(), 1000);
+      timeout = setTimeout(() => generateStars(), 100);
     }
 
     window.addEventListener('resize', resizeListener);

@@ -33,11 +33,10 @@ const AppWrapper = ({ children }) => {
       setHeight(getHeight());
     }
 
-    changeHeightValue();
     let timeout = null;
     function resizeListener() {
       clearTimeout(timeout);
-      timeout = setTimeout(() => changeHeightValue(), 300);
+      timeout = setTimeout(() => changeHeightValue(), 100);
     }
 
     window.addEventListener('resize', resizeListener);
