@@ -33,15 +33,16 @@ const AppWrapper = ({ children }) => {
       setHeight(getHeight());
     }
 
-    window.addEventListener('resize', changeHeightValue);
-    if (window.screen.orientation) {
-      window.screen.orientation.addEventListener('change', changeHeightValue);
+    changeHeightValue();
+    let timeout = null;
+    function resizeListener() {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => changeHeightValue(), 300);
     }
+
+    window.addEventListener('resize', resizeListener);
     return () => {
-      window.removeEventListener('resize', changeHeightValue);
-      if (window.screen.orientation) {
-        window.screen.orientation.removeEventListener('change', changeHeightValue);
-      }
+      window.removeEventListener('resize', resizeListener);
     };
   }, []);
 
