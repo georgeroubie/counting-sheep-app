@@ -30,7 +30,10 @@ const AppWrapper = ({ children }) => {
 
   useEffect(() => {
     function changeHeightValue() {
-      setHeight(getHeight());
+      const currentHeight = getHeight();
+      if (height !== currentHeight) {
+        setHeight(currentHeight);
+      }
     }
 
     let timeout = null;
@@ -43,7 +46,7 @@ const AppWrapper = ({ children }) => {
     return () => {
       window.removeEventListener('resize', resizeListener);
     };
-  }, []);
+  }, [height]);
 
   return (
     <Wrapper $height={height}>
