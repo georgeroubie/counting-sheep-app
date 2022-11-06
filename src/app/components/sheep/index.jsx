@@ -1,5 +1,6 @@
+import PropTypes from 'prop-types';
 import { forwardRef } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { setAnimation } from '../../theme/styles/helpers';
 import SheepBody from './body';
 import SheepFace from './face';
@@ -16,6 +17,12 @@ const Wrapper = styled.div`
   height: 180px;
   z-index: 1;
   ${createSheepWalkingAnimation(7)}
+
+  ${({ $clickable }) =>
+    $clickable &&
+    css`
+      cursor: pointer;
+    `}
 
   @media(${({ theme: { breakpoints } }) => breakpoints.sm}) {
     ${createSheepWalkingAnimation(8)}
@@ -38,9 +45,9 @@ const Wrapper = styled.div`
   }
 `;
 
-const Sheep = forwardRef((props, ref) => {
+const Sheep = forwardRef(({ clickable, onClick }, ref) => {
   return (
-    <Wrapper ref={ref}>
+    <Wrapper ref={ref} $clickable={clickable} onClick={onClick}>
       <SheepFace />
       <SheepBody />
       <SheepLegs />
@@ -49,5 +56,15 @@ const Sheep = forwardRef((props, ref) => {
 });
 
 Sheep.displayName = 'Sheep';
+
+Sheep.propTypes = {
+  clickable: PropTypes.bool,
+  onClick: PropTypes.func,
+};
+
+Sheep.defaultProps = {
+  clickable: false,
+  onClick: () => {},
+};
 
 export default Sheep;

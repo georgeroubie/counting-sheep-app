@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import _AddIcon from '../../components/icons/Add';
 import _InfoIcon from '../../components/icons/Info';
 import _ResetIcon from '../../components/icons/Reset';
 import Sheep from '../../components/sheep';
@@ -43,10 +42,6 @@ const ResetIcon = styled(_ResetIcon)`
   width: ${({ theme: { fontSize } }) => fontSize.xlarge};
 `;
 
-const AddIcon = styled(_AddIcon)`
-  width: ${({ theme: { fontSize } }) => fontSize.xlarge};
-`;
-
 const Home = () => {
   const navigate = useNavigate();
   const sheepRef = useRef(null);
@@ -79,11 +74,8 @@ const Home = () => {
     <>
       <Sky />
       {numberOfSheep > 0 && <Number>{numberOfSheep}</Number>}
-      <Sheep ref={sheepRef} />
+      <Sheep ref={sheepRef} clickable={isAddSheepEnabled} onClick={addOneSheep} />
       <Grass>
-        <IconWrapper onClick={addOneSheep}>
-          <AddIcon />
-        </IconWrapper>
         <IconWrapper onClick={refreshPage}>
           <ResetIcon />
         </IconWrapper>

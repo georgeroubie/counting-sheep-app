@@ -29,7 +29,7 @@ const About = () => {
       <Subtitle>Info</Subtitle>
       <Description>
         A counting sheep app that will help you fall asleep. You can count them with your mind, which is very effective,
-        or you can use the count button. Thank you for using it!
+        or you can click on the sheep. Thank you for using it!
       </Description>
       <Subtitle>Insomnia</Subtitle>
       <Description>
