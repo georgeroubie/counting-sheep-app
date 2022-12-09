@@ -175,7 +175,6 @@ const Stars = () => {
     <>
       {stars.map((star, index) => (
         <Star
-          // eslint-disable-next-line react/no-array-index-key
           key={index}
           style={{ top: star.top, left: star.left }}
           $trembling={star.trembling}
