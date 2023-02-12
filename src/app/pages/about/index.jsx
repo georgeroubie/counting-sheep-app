@@ -1,15 +1,10 @@
 import { useNavigate } from 'react-router-dom';
-import styled from 'styled-components';
 import PageWrapper from '../../components/layout/PageWrapper';
 import Description from '../../components/typography/Description';
+import Hyperlink from '../../components/typography/Hyperlink';
 import Subtitle from '../../components/typography/Subtitle';
 import Title from '../../components/typography/Title';
-import Paypal from './Paypal';
-
-const Hyperlink = styled.a`
-  text-decoration: underline;
-  display: inline-block;
-`;
+import Donation from '../../components/ui/Donation';
 
 const About = () => {
   const navigate = useNavigate();
@@ -21,11 +16,10 @@ const About = () => {
   return (
     <PageWrapper>
       <Title onBack={onBackHandler}>About</Title>
-      <Subtitle>Donation</Subtitle>
       <Description>
-        Buy me a coffee or a beer:&nbsp;
-        <Paypal />
+        <Donation />
       </Description>
+
       <Subtitle>Info</Subtitle>
       <Description>
         A counting sheep app that will help you fall asleep. You can count them with your mind, which is very effective,

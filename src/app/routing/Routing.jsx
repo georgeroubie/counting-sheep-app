@@ -6,8 +6,6 @@ import RoutingLoader from './Loader';
 // Lazy load pages
 const About = lazy(() => import('../pages/about'));
 const NotFound = lazy(() => import('../pages/not-found'));
-const CompleteDonation = lazy(() => import('../pages/donation/Complete'));
-const CancelDonation = lazy(() => import('../pages/donation/Cancel'));
 
 const Routing = () => {
   return (
@@ -18,22 +16,6 @@ const Routing = () => {
         element={
           <RoutingLoader>
             <About />
-          </RoutingLoader>
-        }
-      />
-      <Route
-        path="/complete-donation"
-        element={
-          <RoutingLoader>
-            <CompleteDonation />
-          </RoutingLoader>
-        }
-      />
-      <Route
-        path="/cancel-donation"
-        element={
-          <RoutingLoader>
-            <CancelDonation />
           </RoutingLoader>
         }
       />
